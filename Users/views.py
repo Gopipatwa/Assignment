@@ -26,9 +26,9 @@ def login(request):
 				request.session['email'] = data.email
 				request.session['name'] = data.first_name+" "+data.last_name
 				return redirect('home')
-			else:
-				messages.warning(request, message="Invalid input plz try again")
-				return redirect('login')
+		else:
+			messages.warning(request, message="Invalid input plz try again")
+			return redirect('login')
 	return render(request, template_name="login.html")
 
 def register(request):
